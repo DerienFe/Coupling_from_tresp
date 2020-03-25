@@ -25,10 +25,10 @@ from math import *
 import matplotlib.pyplot as plt
 
 
-E_lut620 = 14900/8065.54
-E_cla610 = 14900/8065.54
-E_cla611 = 14900/8065.54
-E_cla612 = 14900/8065.54
+E_lut620 = 14900
+E_cla610 = 14900
+E_cla611 = 14900
+E_cla612 = 14900
 
 E_0 = 8.85E-12   #perimittivity of free space unit:F/m
 E_r = 2      #the dielectric constant in protein unit: F/m
@@ -68,8 +68,8 @@ if __name__ == '__main__':
 
     lut620_dirlist = os.listdir(lut620_dir)
     cla612_dirlist = os.listdir(cla612_dir)
-    cla611_dirlist = os.listdir(cla612_dir)
-    cla610_dirlist = os.listdir(cla612_dir)
+    cla611_dirlist = os.listdir(cla611_dir)
+    cla610_dirlist = os.listdir(cla610_dir)
 
     """
     sort the dirlist, so that it appears in 1,2,3,4,5...
