@@ -80,7 +80,7 @@ if __name__ == '__main__':
     cla612_dirlist = natsorted(cla612_dirlist, key=lambda y: y.lower())
     cla611_dirlist = natsorted(cla611_dirlist, key=lambda y: y.lower())
     cla610_dirlist = natsorted(cla610_dirlist, key=lambda y: y.lower())
-    #print(lut620_dirlist)
+    print(lut620_dirlist, cla610_dirlist, cla611_dirlist, cla612_dirlist)
     #all = [lut620_dirlist,cla612_dirlist,cla611_dirlist,cla610_dirlist]
 
 
