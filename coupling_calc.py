@@ -14,6 +14,13 @@ H =     [ E620  J       J       J   ]
         [               E611    J   ]
         [                       E610]
 
+
+14900 Hamiltonian_result.npy
+15300 Hamiltonian_result2.npy
+15100 Hamiltonian_result3.npy
+14700
+14500
+14800
 """
 from natsort import natsorted, ns
 import pickle
@@ -25,7 +32,7 @@ from math import *
 import matplotlib.pyplot as plt
 
 
-E_lut620 = 14900
+E_lut620 = 15000
 E_cla610 = 14900
 E_cla611 = 14900
 E_cla612 = 14900
@@ -124,7 +131,8 @@ if __name__ == '__main__':
 
         Hamiltonian_result.append(Hamiltonian)
     #result_norm = [(float(i)-min(result))/(max(result)-min(result)) for i in result]      #normalizing the list to let elements to be [0,1]
-    np.save('Hamiltonian_result.npy', Hamiltonian_result)
+    np.save('Hamiltonian_result7.npy', Hamiltonian_result)
+    print("saving result to 'Hamiltonian_result7.npy'")
 """
     with open('coupling_result.csv', 'w') as f:
         wr = csv.writer(f, quoting=csv.QUOTE_ALL)
