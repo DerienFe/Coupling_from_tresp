@@ -12,15 +12,17 @@ The Hamiltonian construction:
 H =     [ E620  J       J       J   ]
         [       E610    J       J   ]
         [               E611    J   ]
-        [                       E610]
+        [                       E612]
 
 
 14900 Hamiltonian_result.npy
 15300 Hamiltonian_result2.npy
 15100 Hamiltonian_result3.npy
-14700
-14500
+14700 4
+14500 5
 14800
+
+chl 15100, lut 14500 Hamiltonian_result8.npy
 """
 from natsort import natsorted, ns
 import pickle
@@ -32,13 +34,13 @@ from math import *
 import matplotlib.pyplot as plt
 
 
-E_lut620 = 15000
-E_cla610 = 14900
-E_cla611 = 14900
-E_cla612 = 14900
+E_lut620 = 14500
+E_cla610 = 15100
+E_cla611 = 15100
+E_cla612 = 15100
 
 E_0 = 8.85E-12   #perimittivity of free space unit:F/m
-E_r = 2      #the dielectric constant in protein unit: F/m
+E_r = 2      #the dielectric constant in protein. unitless.
 elemental_charge = 1.6E-19
 
 def calc_distance(list1, list2):
@@ -57,7 +59,7 @@ def point2point(np_array1, np_array2):
 def coupling_calc(mol1, mol2):
     summation = 0
     for atom1 in mol1:
-       for atom2 in mol2:
+        for atom2 in mol2:
             summation += point2point(atom1, atom2)
     #print(summation)
     constant = (elemental_charge*elemental_charge) / (E_0 * E_r * 4 * pi * 1.0E-10)
@@ -131,8 +133,8 @@ if __name__ == '__main__':
 
         Hamiltonian_result.append(Hamiltonian)
     #result_norm = [(float(i)-min(result))/(max(result)-min(result)) for i in result]      #normalizing the list to let elements to be [0,1]
-    np.save('Hamiltonian_result7.npy', Hamiltonian_result)
-    print("saving result to 'Hamiltonian_result7.npy'")
+    np.save('Hamiltonian_result8.npy', Hamiltonian_result)
+    print("saving result to 'Hamiltonian_result8.npy'")
 """
     with open('coupling_result.csv', 'w') as f:
         wr = csv.writer(f, quoting=csv.QUOTE_ALL)
